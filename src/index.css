@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    cursor: url('../src/assets/cursor/cursor.png'), auto;
+}
+
+::selection {
+    color: black;
+    background: orange;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Geo:ital@0;1&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Allan:wght@400;700&family=DM+Serif+Text:ital@0;1&family=Geo:ital@0;1&display=swap');
