@@ -9,6 +9,7 @@ module.exports = {
         allan: ["Allan", "sans"],
       },
     },
+    darkMode: "class",
   },
   plugins: [],
 };

@@ -5,6 +5,11 @@
 
 body {
     cursor: url('../src/assets/cursor/cursor.png'), auto;
+    overflow: auto;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 ::selection {

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import logo from "../assets/logo/SK-logo-50px-Black.svg";
+import Switcher from "./switcher";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,9 +10,9 @@ function Header() {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 px-10">
       <div className="flex items-center justify-between max-sm:flex-row max-lg:flex-row mb-8">
-        <a className="" href="#">
+        <a className="" href="/">
           <img src={logo} alt="SK Logo" />
         </a>
 
@@ -53,6 +54,7 @@ function Header() {
           <button className="bg-yellow-300 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 hover:transition-transform hover:transform hover:scale-105">
             Contact me
           </button>
+          <Switcher />
         </div>
       </div>
     </div>

@@ -19,16 +19,16 @@ function AboutMe() {
       className="flex flex-col md:flex-row rounded-lg shadow-lg p-8 w-full"
     >
       <div className="flex-1 mb-4 md:mb-0">
-        <Canvas>
+        {/* <Canvas>
           <OrbitControls enableZoom={false} />
           <ambientLight />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
           <Model />
-        </Canvas>
+        </Canvas> */}
       </div>
       <div className="md:ml-8 text-center md:text-left ">
         <h1 className="text-4xl font-bold text-orange-500 mb-4">About Me</h1>
-        <div className="text-lg font-geo">
+        <div className="text-3xl font-geo">
           <p className="mb-4">
             I'm Shreyansh Koladiya, a web developer with 2+ years of experience.
             I specialize in creating dynamic, responsive, and accessible

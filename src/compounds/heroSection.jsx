@@ -1,31 +1,41 @@
-import React, { useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera, SpotLight } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import modelPath from "../assets/3D-Model/678197dbd86b55e2cf637263.glb";
 import { ReactTyped } from "react-typed";
 
-function Model() {
-  const model = { modelPath };
-  const gltf = useLoader(GLTFLoader, model.modelPath);
-  const Ref = useRef();
+function Model({ scrollYRef }) {
+  const gltf = useLoader(GLTFLoader, modelPath);
+  const modelRef = useRef();
 
-  useFrame((state, delta) => {
-    // Ref.current.rotation.x += delta;
-    Ref.current.rotation.y += delta;
-    Ref.current.position.y = Math.sin(state.clock.elapsedTime) * 0.3;
+  useFrame(() => {
+    if (modelRef.current && scrollYRef.current !== null) {
+      modelRef.current.rotation.y = scrollYRef.current / 90; // Rotate based on scroll
+      modelRef.current.position.y = -(scrollYRef.current / 150); // Move vertically
+    }
   });
 
   return (
-    <>
-      <mesh ref={Ref}>
-        <primitive object={gltf.scene} />
-      </mesh>
-    </>
+    <mesh ref={modelRef} scale={[5, 5, 5]}>
+      <primitive object={gltf.scene} />
+    </mesh>
   );
 }
 
-function heroSection() {
+function HeroSection() {
+  const scrollYRef = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      scrollYRef.current = window.scrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col items-center p-10">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full">
@@ -62,7 +72,7 @@ function heroSection() {
               to life.
             </p>
             <div className="flex space-x-8 text-2xl max-sm:text-xl max-sm:flex-col max-sm:space-x-0 max-sm:space-y-4">
-              <div className="text-center ">
+              <div className="text-center">
                 <p className="font-bold text-yellow-500">5+</p>
                 <p>Projects</p>
               </div>
@@ -76,12 +86,19 @@ function heroSection() {
               </div>
             </div>
           </div>
-          <div className="flex-auto ">
+          <div className="flex-auto m-5">
             <Canvas>
-              <PerspectiveCamera makeDefault position={[0, 0, 5]} />
+              <PerspectiveCamera
+                makeDefault
+                fov={88}
+                aspect={window.innerWidth / window.innerHeight}
+                
+
+                position={[0, 0, 10]}
+              />
               <ambientLight />
               <OrbitControls enableZoom={false} />
-              <Model />
+              <Model scrollYRef={scrollYRef} />
             </Canvas>
           </div>
         </div>
@@ -90,4 +107,4 @@ function heroSection() {
   );
 }
 
-export default heroSection;
+export default HeroSection;
