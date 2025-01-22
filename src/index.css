@@ -6,6 +6,9 @@
 body {
     cursor: url('../src/assets/cursor/cursor.png'), auto;
     overflow: auto;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body::-webkit-scrollbar {
@@ -16,6 +19,18 @@ body::-webkit-scrollbar {
     color: black;
     background: orange;
 }
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+}
+
+.dark {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+}
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap');
 

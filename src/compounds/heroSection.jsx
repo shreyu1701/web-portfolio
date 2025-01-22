@@ -17,7 +17,7 @@ function Model({ scrollYRef }) {
   });
 
   return (
-    <mesh ref={modelRef} scale={[5, 5, 5]}>
+    <mesh ref={modelRef} scale={[8, 8, 8]}>
       <primitive object={gltf.scene} />
     </mesh>
   );
@@ -91,13 +91,11 @@ function HeroSection() {
               <PerspectiveCamera
                 makeDefault
                 fov={88}
-                aspect={window.innerWidth / window.innerHeight}
-                
-
-                position={[0, 0, 10]}
+                near={0.1}
+                far={1000}
+                position={[0, 6, 10]}
               />
               <ambientLight />
-              <OrbitControls enableZoom={false} />
               <Model scrollYRef={scrollYRef} />
             </Canvas>
           </div>

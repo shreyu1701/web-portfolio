@@ -1,18 +1,18 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import logo from "../assets/logo/SK-logo-50px-Black.svg";
 import Switcher from "./switcher";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
 
   return (
-    <div className="p-4 px-10">
-      <div className="flex items-center justify-between max-sm:flex-row max-lg:flex-row mb-8">
-        <a className="" href="/">
+    <header className="p-4 px-10">
+      <div className="flex items-center justify-between mb-8">
+        <a href="/">
           <img src={logo} alt="SK Logo" />
         </a>
 
@@ -20,6 +20,8 @@ function Header() {
         <button
           className="sm:hidden focus:outline-none fixed top-4 right-4 z-50 bg-white p-2 rounded-full shadow-lg"
           onClick={toggleMenu}
+          aria-label="Toggle Menu"
+          aria-expanded={isMenuOpen}
         >
           <svg
             className="w-6 h-6"
@@ -27,6 +29,7 @@ function Header() {
             stroke="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -37,27 +40,49 @@ function Header() {
           </svg>
         </button>
 
-        <div
+        <nav
           className={`${
             isMenuOpen ? "flex" : "hidden"
-          } sm:flex max-sm:flex-col sm:items-center sm:space-x-4 max-sm:fixed max-sm:top-16 max-sm:right-4 max-sm:z-40 max-sm:bg-white max-sm:p-4 max-sm:rounded-lg max-sm:shadow-lg`}
+          } sm:flex flex-col sm:flex-row items-center sm:space-x-4 fixed sm:static top-16 right-4 bg-white p-4 sm:p-0 rounded-lg shadow-lg sm:shadow-none z-40`}
         >
-          <button className="bg-yellow-300 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 hover:transition-transform hover:transform hover:scale-105">
-            <a href="#aboutme"> About me </a>
-          </button>
-          <button className="bg-yellow-300 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 hover:transition-transform hover:transform hover:scale-105">
+          <a
+            href="#aboutme"
+            className="bg-yellow-300 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 transition-transform transform hover:scale-105"
+          >
+            About me
+          </a>
+          <a
+            href="#portfolio"
+            className="bg-yellow-300 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 transition-transform transform hover:scale-105"
+          >
             Portfolio
-          </button>
-          <button className="bg-yellow-300 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 hover:transition-transform hover:transform hover:scale-105">
+          </a>
+          <a
+            href="#services"
+            className="bg-yellow-300 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 transition-transform transform hover:scale-105"
+          >
             Services
-          </button>
-          <button className="bg-yellow-300 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 hover:transition-transform hover:transform hover:scale-105">
+          </a>
+          <a
+            href="#contact"
+            className="bg-yellow-300 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 transition-transform transform hover:scale-105"
+          >
             Contact me
-          </button>
-          <Switcher />
-        </div>
+          </a>
+
+          {/* dark mode */}
+          {/* <Switcher /> */}
+        </nav>
+        <button className="max-sm:block focus:outline-none pr-6">
+          <a
+            href="https://drive.google.com/file/d/1SMyfHeWB1FLjs9FO8KK0oy5ZSsapXcoU/view?usp=sharing"
+            className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-yellow-400 transition-transform transform hover:scale-105"
+          >
+            Download Resume
+          </a>
+        </button>
       </div>
-    </div>
+    </header>
   );
 }
 
