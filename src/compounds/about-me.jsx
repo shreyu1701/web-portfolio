@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // Importing motion
 import image from "../assets/image/Shreyansh.jpg";
 
 function AboutMe() {
@@ -8,16 +9,28 @@ function AboutMe() {
       className="flex flex-col md:flex-row items-center justify-center md:justify-between rounded-lg shadow-lg p-4 md:p-10 m-4 md:m-10 w-full max-w-7xl mx-auto"
     >
       {/* Image Section */}
-      <div className="w-full md:w-1/2 h-64 md:h-96 flex justify-center items-center">
+      <motion.div
+        className="w-full md:w-1/2 h-64 md:h-96 flex justify-center items-center"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false }} // Trigger animation once when the image enters the viewport
+        transition={{ duration: 5.0, type: "spring", stiffness: 50 }}
+      >
         <img
           src={image}
           alt="Shreyansh Koladiya"
           className="w-full h-full rounded-lg"
         />
-      </div>
+      </motion.div>
 
       {/* About Me Text Section */}
-      <div className="w-full md:w-1/2 md:ml-8 text-center md:text-left mt-6 md:mt-0">
+      <motion.div
+        className="w-full md:w-1/2 md:ml-8 text-center md:text-left mt-6 md:mt-0"
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false }} // Trigger animation once when the text enters the viewport
+        transition={{ duration: 5.0, type: "spring", stiffness: 50 }}
+      >
         <h1 className="text-3xl md:text-4xl font-bold text-orange-500 mb-4">
           About Me
         </h1>
@@ -37,7 +50,7 @@ function AboutMe() {
             note about your passion for web development.
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

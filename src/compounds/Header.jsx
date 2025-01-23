@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import logo from "../assets/logo/SK-logo-50px-Black.svg";
-import Switcher from "./switcher";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,16 +45,16 @@ function Header() {
           } sm:flex flex-col sm:flex-row items-center sm:space-x-4 fixed sm:static top-16 right-4 bg-white p-4 sm:p-0 rounded-lg shadow-lg sm:shadow-none z-40`}
         >
           <a
-            href="#aboutme"
-            className="bg-yellow-300 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 transition-transform transform hover:scale-105"
-          >
-            About me
-          </a>
-          <a
             href="#portfolio"
             className="bg-yellow-300 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 transition-transform transform hover:scale-105"
           >
             Portfolio
+          </a>
+          <a
+            href="#aboutme"
+            className="bg-yellow-300 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 transition-transform transform hover:scale-105"
+          >
+            About me
           </a>
           <a
             href="#services"
