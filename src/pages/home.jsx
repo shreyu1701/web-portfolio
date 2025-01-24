@@ -4,6 +4,7 @@ import Header from "../compounds/Header";
 import AboutMe from "../compounds/about-me";
 import Portfolio from "../compounds/Portfolio";
 import Services from "../compounds/Services";
+import Contact from "../compounds/Contact";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <Portfolio />
       <AboutMe />
       <Services />
+      <Contact />
     </div>
   );
 }

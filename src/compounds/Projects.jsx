@@ -38,7 +38,7 @@ function Project({ image, title, description, website, sourceCode, tags }) {
           href={website}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-yellow-300 text-black font-medium py-2 px-4 rounded hover:bg-yellow-400 transition"
+          className="bg-orange-500 text-black font-medium py-2 px-4 rounded hover:bg-yellow-400 transition"
         >
           View Website
         </a>
@@ -46,7 +46,7 @@ function Project({ image, title, description, website, sourceCode, tags }) {
           href={sourceCode}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-yellow-300 text-black font-medium py-2 px-4 rounded hover:bg-yellow-400 transition"
+          className="bg-orange-500 text-black font-medium py-2 px-4 rounded hover:bg-yellow-400 transition"
         >
           View Source Code
         </a>
