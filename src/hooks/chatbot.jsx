@@ -13,7 +13,7 @@ const Chatbot = () => {
     setMessages([...messages, userMessage]);
 
     try {
-      const response = await axios.post("http://localhost:3001/chat", {
+      const response = await axios.post("http://shreyanshkoladiya.com/chat", {
         message: input,
       });
       const botMessage = { sender: "bot", text: response.data.response };
