@@ -13,6 +13,7 @@ app.use(cors());
 app.use("/api", chatRoutes);
 app.use("/api", emailRoutes);
 
+app.listen(3001, () => console.log("Server running on http://localhost:3001"));
 module.exports = (req, res) => {
   app(req, res); // Call Express app as a Vercel serverless function
 };
