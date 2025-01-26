@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
-const chatRoutes = require("./chatRoutes.js");
-const emailRoutes = require("./emailRoutes.js");
+const chatRoutes = require("./chatRoutes.jsx");
+const emailRoutes = require("./emailRoutes.jsx");
 
 const app = express();
 

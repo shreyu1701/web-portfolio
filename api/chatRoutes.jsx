@@ -1,9 +1,9 @@
 const express = require("express");
-const { startChat } = require("../backend/services/geminiServices.jsx");
+const { startChat } = require("../src/backend/services/geminiServices.jsx");
 
 const router = express.Router();
 
-router.post("/chat", async (req, res) => {
+router.post("/api/chat", async (req, res) => {
   const { message } = req.body;
 
   try {

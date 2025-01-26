@@ -8,7 +8,8 @@ const Chatbot = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter' && !isLoading) {
+    if (e.key === "Enter" && !isLoading) {
+      e.preventDefault();
       sendMessage();
     }
   };
@@ -17,6 +18,10 @@ const Chatbot = () => {
     if (input.trim() === "") return;
     if (!process.env.REACT_APP_API_BASE_URL) {
       console.error("API URL not configured");
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { sender: "bot", text: "Sorry, the API is not configured properly." },
+      ]);
       return;
     }
 
@@ -25,14 +30,24 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
+      console.log("Sending message:", input); // Debugging line
       const response = await axios.post(
         `${process.env.REACT_APP_API_BASE_URL}`,
-        {
-          message: input,
-        }
+        { message: input }
       );
-      const botMessage = { sender: "bot", text: response.data.response };
-      setMessages((prevMessages) => [...prevMessages, botMessage]);
+      console.log("Response:", response); // Debugging line
+
+      if (response.data && response.data.response) {
+        const botMessage = { sender: "bot", text: response.data.response };
+        setMessages((prevMessages) => [...prevMessages, botMessage]);
+      } else {
+        console.error("Unexpected response format:", response.data);
+        const errorMessage = {
+          sender: "bot",
+          text: "Sorry, something went wrong.",
+        };
+        setMessages((prevMessages) => [...prevMessages, errorMessage]);
+      }
     } catch (error) {
       console.error("Error sending message:", error);
       const errorMessage = {
@@ -116,7 +131,7 @@ const Chatbot = () => {
               placeholder="Type a message..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyPress={handleKeyPress}
+              onKeyDown={handleKeyPress}
               disabled={isLoading}
             />
             <button

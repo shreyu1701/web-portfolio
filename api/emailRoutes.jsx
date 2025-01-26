@@ -1,9 +1,9 @@
 const express = require("express");
-const { sendEmail } = require("../backend/services/emailServices.jsx");
+const { sendEmail } = require("../src/backend/services/emailServices.jsx");
 
 const router = express.Router();
 
-router.post("/send-email", async (req, res) => {
+router.post("/api/send-email", async (req, res) => {
   const { to, subject, message } = req.body;
 
   if (!to || !subject || !message) {
