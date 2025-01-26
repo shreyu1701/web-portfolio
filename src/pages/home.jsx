@@ -5,6 +5,7 @@ import AboutMe from "../compounds/about-me";
 import Portfolio from "../compounds/Portfolio";
 import Services from "../compounds/Services";
 import Contact from "../compounds/Contact";
+import Footer from "../compounds/Footer";
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       <AboutMe />
       <Services />
       <Contact />
+      <Footer />
     </div>
   );
 }

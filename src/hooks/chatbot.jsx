@@ -5,17 +5,32 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !isLoading) {
+      sendMessage();
+    }
+  };
 
   const sendMessage = async () => {
     if (input.trim() === "") return;
+    if (!process.env.REACT_APP_API_BASE_URL) {
+      console.error("API URL not configured");
+      return;
+    }
 
     const userMessage = { sender: "user", text: input };
     setMessages([...messages, userMessage]);
+    setIsLoading(true);
 
     try {
-      const response = await axios.post("http://shreyanshkoladiya.com/chat", {
-        message: input,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_BASE_URL}`,
+        {
+          message: input,
+        }
+      );
       const botMessage = { sender: "bot", text: response.data.response };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
     } catch (error) {
@@ -25,6 +40,8 @@ const Chatbot = () => {
         text: "Sorry, I couldn't process your request.",
       };
       setMessages((prevMessages) => [...prevMessages, errorMessage]);
+    } finally {
+      setIsLoading(false);
     }
 
     setInput("");
@@ -90,6 +107,7 @@ const Chatbot = () => {
                 {msg.text}
               </div>
             ))}
+            {isLoading && <div className="text-gray-500">Loading...</div>}
           </div>
           <div className="flex mt-4">
             <input
@@ -98,10 +116,13 @@ const Chatbot = () => {
               placeholder="Type a message..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              onKeyPress={handleKeyPress}
+              disabled={isLoading}
             />
             <button
               className="bg-orange-500 text-white px-4 py-2 rounded ml-2 text-sm sm:text-base"
               onClick={sendMessage}
+              disabled={isLoading}
             >
               Send
             </button>

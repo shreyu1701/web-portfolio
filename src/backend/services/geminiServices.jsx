@@ -26,24 +26,29 @@ const generationConfig = {
 };
 
 const startChat = async (message) => {
-  const chatSession = model.startChat({
-    generationConfig,
-    history: [
-      {
-        role: "user",
-        parts: [{ text: "Act like a chatbot for my projects..." }],
-      },
-      {
-        role: "model",
-        parts: [
-          { text: "Okay, I understand. I'll act as your project chatbot..." },
-        ],
-      },
-    ],
-  });
+  try {
+    const chatSession = model.startChat({
+      generationConfig,
+      history: [
+        {
+          role: "user",
+          parts: [{ text: "Act like a chatbot for my projects..." }],
+        },
+        {
+          role: "model",
+          parts: [
+            { text: "Okay, I understand. I'll act as your project chatbot..." },
+          ],
+        },
+      ],
+    });
 
-  const result = await chatSession.sendMessage(message);
-  return result.response.text();
+    const result = await chatSession.sendMessage(message);
+    return result.response.text();
+  } catch (error) {
+    console.error("Error starting chat:", error);
+    throw new Error("Failed to start chat session.");
+  }
 };
 
 module.exports = { startChat };
