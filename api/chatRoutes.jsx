@@ -1,5 +1,5 @@
 const express = require("express");
-const { startChat } = require("../services/geminiServices.jsx");
+const { startChat } = require("../backend/services/geminiServices.jsx");
 
 const router = express.Router();
 
@@ -18,4 +18,6 @@ router.post("/chat", async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = (req, res) => {
+  router(req, res); // Call Express router as a Vercel serverless function
+};

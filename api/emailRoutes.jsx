@@ -1,5 +1,5 @@
 const express = require("express");
-const { sendEmail } = require("../services/emailServices.jsx");
+const { sendEmail } = require("../backend/services/emailServices.jsx");
 
 const router = express.Router();
 
@@ -19,4 +19,6 @@ router.post("/send-email", async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = (req, res) => {
+  router(req, res); // Call Express router as a Vercel serverless function
+};
