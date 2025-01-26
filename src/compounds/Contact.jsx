@@ -20,12 +20,18 @@ function Contact() {
   // Client-side validation
   const validateForm = () => {
     if (formData.name.length < 3) {
-      setStatus({ type: "error", message: "Name must be at least 3 characters." });
+      setStatus({
+        type: "error",
+        message: "Name must be at least 3 characters.",
+      });
       return false;
     }
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(formData.email)) {
-      setStatus({ type: "error", message: "Please enter a valid email address." });
+      setStatus({
+        type: "error",
+        message: "Please enter a valid email address.",
+      });
       return false;
     }
     if (formData.message.trim().length === 0) {
@@ -45,7 +51,8 @@ function Contact() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('https://web-portfolio-rho-steel.vercel.app/api/send-email',
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_BASE_URL}/api/send-email`,
         {
           to: formData.email, // Replace with your recipient email
           subject: `Message from ${formData.name} (${formData.email})`,

@@ -32,7 +32,7 @@ const Chatbot = () => {
     try {
       console.log("Sending message:", input); // Debugging line
       const response = await axios.post(
-        'https://web-portfolio-rho-steel.vercel.app/api/chat',
+        `${process.env.REACT_APP_API_BASE_URL}/api/chat`,
         { message: input }
       );
       console.log("Response:", response); // Debugging line
