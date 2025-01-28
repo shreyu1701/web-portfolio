@@ -98,6 +98,39 @@ function Contact() {
           <p className="text-center text-gray-500 mb-4">
             Feel free to reach out to me via email or social media.
           </p>
+          <div className="flex justify-center items-center space-x-4 mb-4">
+            <a
+              href="mailto:shreyanshkoladiyawork@gmail.com"
+              target="_blank"
+              className="text-orange-500 hover:text-orange-700 transition duration-300 ease-in-out"
+            >
+              shreyanshkoladiyawork@gmail.com
+            </a>
+            <span className="text-black">|</span>
+            <a
+              href="https://www.github.com/shreyu1701"
+              target="_blank"
+              className="text-orange-500 hover:text-orange-700 transition duration-300 ease-in-out"
+            >
+              GitHub
+            </a>
+            <span className="text-black">|</span>
+            <a
+              href="https://www.linkedin.com/in/shreyansh-koladiya-38a2b71a3"
+              target="_blank"
+              className="text-orange-500 hover:text-orange-700 transition duration-300 ease-in-out"
+            >
+              LinkedIn
+            </a>
+            <span className="text-black">|</span>
+            <a
+              href="https://www.instagram.com/shreyansh__1701"
+              target="_blank"
+              className="text-orange-500 hover:text-orange-700 transition duration-300 ease-in-out"
+            >
+              Instagram
+            </a>
+          </div>
         </motion.div>
 
         {/* Contact Form */}
@@ -179,7 +212,6 @@ function Contact() {
             {isLoading ? "Sending..." : "Send Message"}
           </button>
         </motion.form>
-
         {status && (
           <div
             className={`mt-4 p-3 text-center rounded ${
