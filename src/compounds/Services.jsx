@@ -27,6 +27,7 @@ function Services() {
 
   return (
     <motion.div
+      id="services"
       className="services px-4 sm:px-6 lg:px-8 py-12 bg-gray-50"
       initial="hidden"
       whileInView="visible"

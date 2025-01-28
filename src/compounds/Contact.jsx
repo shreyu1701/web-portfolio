@@ -78,7 +78,7 @@ function Contact() {
   };
 
   return (
-    <div className="bg-gray-100 py-10">
+    <div id="contact" className="bg-gray-100 py-10">
       <motion.div
         className="max-w-3xl mx-auto px-4"
         initial={{ opacity: 0, y: 50 }}

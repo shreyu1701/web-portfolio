@@ -70,7 +70,7 @@ const Chatbot = () => {
     <div>
       {/* Floating Icon */}
       <div
-        className="fixed bottom-4 right-4 bg-orange-500 text-white p-3 rounded-full shadow-lg cursor-pointer hover:bg-yellow-500 transition-all duration-300 sm:bottom-6 sm:right-6 z-50"
+        className="fixed bottom-4 right-4 bg-orange-500 text-white p-3 rounded-full shadow-lg cursor-pointer hover:bg-orange-400 transition-all duration-300 sm:bottom-6 sm:right-6 z-50"
         onClick={toggleChat}
       >
         {isChatOpen ? (
