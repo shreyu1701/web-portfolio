@@ -3,79 +3,79 @@ import { motion } from "framer-motion";
 import axios from "axios";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // });
 
-  const [status, setStatus] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [status, setStatus] = useState(null);
+  // const [isLoading, setIsLoading] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({ ...formData, [name]: value });
+  // };
 
-  // Client-side validation
-  const validateForm = () => {
-    if (formData.name.length < 3) {
-      setStatus({
-        type: "error",
-        message: "Name must be at least 3 characters.",
-      });
-      return false;
-    }
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(formData.email)) {
-      setStatus({
-        type: "error",
-        message: "Please enter a valid email address.",
-      });
-      return false;
-    }
-    if (formData.message.trim().length === 0) {
-      setStatus({ type: "error", message: "Message cannot be empty." });
-      return false;
-    }
-    return true;
-  };
+  // // Client-side validation
+  // const validateForm = () => {
+  //   if (formData.name.length < 3) {
+  //     setStatus({
+  //       type: "error",
+  //       message: "Name must be at least 3 characters.",
+  //     });
+  //     return false;
+  //   }
+  //   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  //   if (!emailRegex.test(formData.email)) {
+  //     setStatus({
+  //       type: "error",
+  //       message: "Please enter a valid email address.",
+  //     });
+  //     return false;
+  //   }
+  //   if (formData.message.trim().length === 0) {
+  //     setStatus({ type: "error", message: "Message cannot be empty." });
+  //     return false;
+  //   }
+  //   return true;
+  // };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus(null);
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setStatus(null);
 
-    // Validate the form
-    if (!validateForm()) return;
+  //   // Validate the form
+  //   if (!validateForm()) return;
 
-    setIsLoading(true);
+  //   setIsLoading(true);
 
-    try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/api/send-email`,
-        {
-          to: formData.email, // Replace with your recipient email
-          subject: `Message from ${formData.name} (${formData.email})`,
-          message: formData.message,
-        }
-      );
+  //   try {
+  //     const response = await axios.post(
+  //       `${process.env.REACT_APP_API_BASE_URL}/api/send-email`,
+  //       {
+  //         to: formData.email, // Replace with your recipient email
+  //         subject: `Message from ${formData.name} (${formData.email})`,
+  //         message: formData.message,
+  //       }
+  //     );
 
-      if (response.data.success) {
-        setStatus({ type: "success", message: "Message sent successfully!" });
-        setFormData({ name: "", email: "", message: "" }); // Clear form
-      } else {
-        setStatus({ type: "error", message: response.data.message });
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
-      setStatus({
-        type: "error",
-        message: "Failed to send message. Please try again.",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  //     if (response.data.success) {
+  //       setStatus({ type: "success", message: "Message sent successfully!" });
+  //       setFormData({ name: "", email: "", message: "" }); // Clear form
+  //     } else {
+  //       setStatus({ type: "error", message: response.data.message });
+  //     }
+  //   } catch (error) {
+  //     console.error("Error sending message:", error);
+  //     setStatus({
+  //       type: "error",
+  //       message: "Failed to send message. Please try again.",
+  //     });
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
   return (
     <div id="contact" className=" py-10">
@@ -134,7 +134,7 @@ function Contact() {
         </motion.div>
 
         {/* Contact Form */}
-        <motion.form
+        {/* <motion.form
           onSubmit={handleSubmit}
           className=" p-6 shadow-lg rounded-lg"
           initial={{ opacity: 0 }}
@@ -211,8 +211,8 @@ function Contact() {
           >
             {isLoading ? "Sending..." : "Send Message"}
           </button>
-        </motion.form>
-        {status && (
+        </motion.form> */}
+        {/* {status && (
           <div
             className={`mt-4 p-3 text-center rounded ${
               status.type === "success"
@@ -222,7 +222,7 @@ function Contact() {
           >
             {status.message}
           </div>
-        )}
+        )} */}
       </motion.div>
     </div>
   );

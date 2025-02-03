@@ -10,7 +10,7 @@ function App() {
       <Analytics />
       <SplashCursor className=" relative -z-10" />;
       <Home />
-      <Chatbot />
+      {/* <Chatbot /> */}
     </div>
   );
 }
