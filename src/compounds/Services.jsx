@@ -41,12 +41,12 @@ function Services() {
         Our Services
       </motion.h1>
       <motion.div
-        className="services-container grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
+        className=" grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
         variants={containerVariants}
       >
         {/* Web Development */}
         <motion.div
-          className="service bg-white shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow transform hover:scale-105"
+          className="shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow transform hover:scale-105"
           variants={itemVariants}
           viewport={{ once: false }} // Trigger the animation once when it comes into view
           transition={{ duration: 1.6, type: "spring", stiffness: 80 }}
@@ -73,7 +73,7 @@ function Services() {
 
         {/* UI/UX Design */}
         <motion.div
-          className="service bg-white shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow transform hover:scale-105"
+          className="shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow transform hover:scale-105"
           variants={itemVariants}
           viewport={{ once: false }} // Trigger the animation once when it comes into view
           transition={{ duration: 1.6, type: "spring", stiffness: 80 }}
@@ -100,7 +100,7 @@ function Services() {
 
         {/* Digital Marketing */}
         <motion.div
-          className="service bg-white shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow transform hover:scale-105"
+          className=" shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow transform hover:scale-105"
           variants={itemVariants}
           viewport={{ once: false }} // Trigger the animation once when it comes into view
           transition={{ duration: 1.6, type: "spring", stiffness: 80 }}

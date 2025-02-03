@@ -6,7 +6,7 @@ function AboutMe() {
   return (
     <div
       id="aboutme"
-      className="flex flex-col md:flex-row items-center justify-center md:justify-between rounded-lg shadow-lg p-4 md:p-10 m-4 md:m-10 w-full max-w-7xl mx-auto"
+      className="flex flex-col md:flex-row items-center justify-center md:justify-between rounded-lg shadow-lg p-6 md:p-10  sm:p-12 w-full"
     >
       {/* Image Section */}
       <motion.div
@@ -36,18 +36,47 @@ function AboutMe() {
         </h1>
         <div className="text-base md:text-lg lg:text-xl">
           <p className="mb-4">
-            I'm Shreyansh Koladiya, a web developer with 2+ years of experience.
-            I specialize in creating dynamic, responsive, and accessible
-            websites using 3D models and modern technologies like HTML, CSS,
-            JavaScript, React, and React Three.js.
+            Hi, I’m Shreyansh Koladiya, a passionate Web Developer with
+            expertise in React framework and 3D modeling. With over 2 years of
+            experience in the IT industry, I specialize in crafting user-centric
+            and visually appealing websites, delivering engaging and seamless
+            digital experiences.
+          </p>
+          <h2 className="text-2xl text-orange-500 font-bold mb-4">
+            My Journey
+          </h2>
+          <p className="mb-4">
+            I am currently pursuing a Postgraduate Diploma in Information
+            Technology Solutions at Humber College. Throughout my career, I have
+            worked on various major projects in Java technology and web
+            development, contributing to innovative and high-impact solutions.
+            Additionally, I’ve been actively involved in volunteering work and
+            previously served as a Community Connector at Humber College,
+            fostering engagement and collaboration.
           </p>
           <p className="mb-4">
-            I’m currently expanding my expertise in 3D web design and enjoy
-            solving complex technical challenges.
+            I am a lifelong learner, always seeking to expand my knowledge and
+            skills in the ever-evolving
           </p>
+          <h2 className="text-2xl text-orange-500 font-bold mb-4">
+            Let’s Connect!
+          </h2>
           <p className="mb-4">
-            Highlight your education, certifications (if any), and a personal
-            note about your passion for web development.
+            📬 Open to collaborations, freelance work, and networking
+            opportunities! <br /> 🌐{" "}
+            <a href="https://shreyanshkoladiya.com">shreyanshkoladiya.com</a>{" "}
+            <br />
+            📧{" "}
+            <a href="mailto:shreyanshkoladiyawork@gmail.com">
+              shreyanshkoladiyawork@gmail.com
+            </a>{" "}
+            <br />
+            🔗{" "}
+            <a href="www.linkedin.com/in/shreyansh-koladiya-38a2b71a3">
+              LinkedIn - Shreyansh Koladiya
+            </a>
+            <br />
+            🔗 <a href="https://github.com/shreyu1701">GitHub - Shreyu1701</a>
           </p>
         </div>
       </motion.div>

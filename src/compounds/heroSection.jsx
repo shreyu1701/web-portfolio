@@ -12,13 +12,13 @@ function Model({ scrollYRef }) {
 
   useFrame(() => {
     if (modelRef.current && scrollYRef.current !== null) {
-      modelRef.current.rotation.y = scrollYRef.current / 90; // Rotate based on scroll
-      modelRef.current.position.y = -(scrollYRef.current / 150); // Move vertically
+      modelRef.current.rotation.y = scrollYRef.current / 90;
+      modelRef.current.position.y = -(scrollYRef.current / 150);
     }
   });
 
   return (
-    <mesh ref={modelRef} scale={[8, 8, 8]}>
+    <mesh ref={modelRef} scale={[6, 6, 6]}>
       <primitive object={gltf.scene} />
     </mesh>
   );
@@ -37,7 +37,6 @@ function HeroSection() {
     };
   }, []);
 
-  // Framer Motion Variants
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -55,25 +54,27 @@ function HeroSection() {
 
   return (
     <motion.div
-      className="flex flex-col items-center p-10"
+      className="flex flex-col items-center p-6 sm:p-10 w-full"
       initial="hidden"
       animate="visible"
       exit="hidden"
     >
       <motion.div
-        className="bg-white rounded-lg shadow-lg p-8 w-full"
+        className="bg-white rounded-lg shadow-lg p-6 sm:p-8 w-full max-w-6xl"
         variants={textVariants}
       >
-        <div className="flex flex-col md:flex-row">
-          {/* Text Section */}
-          <motion.div className="flex-1 font-dm" variants={textVariants}>
-            <h1 className="text-4xl font-bold mb-4 max-sm:text-3xl">
+        <div className="flex flex-col-reverse md:flex-row items-center">
+          <motion.div
+            className="flex-1 text-center md:text-left"
+            variants={textVariants}
+          >
+            <h1 className="text-3xl sm:text-4xl font-bold mb-4">
               I’m Shreyansh Koladiya
             </h1>
-            <h2 className="text-3xl max-sm:text-2xl font-pacifico text-orange-500 mb-4 font-allan">
+            <h2 className="text-2xl sm:text-4xl font-allan text-orange-500 mb-4">
               as{" "}
               <ReactTyped
-                strings={[" Web Developer.", "UI/UX Designer."]}
+                strings={["Web Developer.", "UI/UX Designer."]}
                 typeSpeed={100}
                 loop
                 backSpeed={20}
@@ -81,26 +82,16 @@ function HeroSection() {
                 showCursor={true}
               />
             </h2>
-
-            <p className="text-2xl max-sm:text-xl mb-4">
+            <p className="text-2xl sm:text-lg mb-4">
               I create{" "}
-              <span className="text-yellow-500 font-bold font-allan">
-                functional
-              </span>
-              , visually appealing, and{" "}
-              <span className="text-yellow-500 font-bold font-allan">
-                user-centric
-              </span>{" "}
+              <span className="text-yellow-500 font-bold">functional</span>,
+              visually appealing, and{" "}
+              <span className="text-yellow-500 font-bold">user-centric</span>{" "}
               websites to bring{" "}
-              <span className="text-orange-500 font-bold font-allan">
-                ideas
-              </span>{" "}
-              to life.
+              <span className="text-orange-500 font-bold">ideas</span> to life.
             </p>
-
-            {/* Counters with Animation */}
             <motion.div
-              className="flex space-x-8 text-2xl max-sm:text-xl max-sm:flex-col max-sm:space-x-0 max-sm:space-y-4"
+              className="flex justify-center md:justify-start space-x-6 text-lg sm:text-xl"
               variants={counterVariants}
             >
               <motion.div
@@ -127,21 +118,20 @@ function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* 3D Model */}
           <motion.div
-            className="flex-auto m-5"
+            className="w-full md:w-1/2 h-[300px] sm:h-[400px]"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1, transition: { duration: 0.8 } }}
           >
-            <Canvas>
+            <Canvas className="w-full h-full">
               <PerspectiveCamera
                 makeDefault
-                fov={88}
+                fov={75}
                 near={0.1}
                 far={1000}
                 position={[0, 6, 10]}
               />
-              <ambientLight />
+              <ambientLight intensity={1.5} />
               <Model scrollYRef={scrollYRef} />
             </Canvas>
           </motion.div>

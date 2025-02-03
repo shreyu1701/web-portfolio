@@ -10,7 +10,7 @@ function Project({ image, title, description, website, sourceCode, tags }) {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className=" bg-white p-6 rounded-lg shadow-md">
       <img
         src={image}
         alt={`${title} project screenshot`}

@@ -78,7 +78,7 @@ function Contact() {
   };
 
   return (
-    <div id="contact" className="bg-gray-100 py-10">
+    <div id="contact" className=" py-10">
       <motion.div
         className="max-w-3xl mx-auto px-4"
         initial={{ opacity: 0, y: 50 }}
@@ -98,7 +98,7 @@ function Contact() {
           <p className="text-center text-gray-500 mb-4">
             Feel free to reach out to me via email or social media.
           </p>
-          <div className="flex justify-center items-center space-x-4 mb-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center text-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
             <a
               href="mailto:shreyanshkoladiyawork@gmail.com"
               target="_blank"
@@ -106,7 +106,7 @@ function Contact() {
             >
               shreyanshkoladiyawork@gmail.com
             </a>
-            <span className="text-black">|</span>
+            <span className="hidden sm:inline text-black">|</span>
             <a
               href="https://www.github.com/shreyu1701"
               target="_blank"
@@ -114,7 +114,7 @@ function Contact() {
             >
               GitHub
             </a>
-            <span className="text-black">|</span>
+            <span className="hidden sm:inline text-black">|</span>
             <a
               href="https://www.linkedin.com/in/shreyansh-koladiya-38a2b71a3"
               target="_blank"
@@ -122,7 +122,7 @@ function Contact() {
             >
               LinkedIn
             </a>
-            <span className="text-black">|</span>
+            <span className="hidden sm:inline text-black">|</span>
             <a
               href="https://www.instagram.com/shreyansh__1701"
               target="_blank"
@@ -136,7 +136,7 @@ function Contact() {
         {/* Contact Form */}
         <motion.form
           onSubmit={handleSubmit}
-          className="bg-white p-6 shadow-lg rounded-lg"
+          className=" p-6 shadow-lg rounded-lg"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}

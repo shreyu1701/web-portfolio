@@ -9,7 +9,7 @@ import Footer from "../compounds/Footer";
 
 function Home() {
   return (
-    <div>
+    <div className="relative z-10 ">
       <Header />
       <HeroSection />
       <Portfolio />
