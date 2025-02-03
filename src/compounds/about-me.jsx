@@ -37,10 +37,10 @@ function AboutMe() {
         <div className="text-base md:text-lg lg:text-xl">
           <p className="mb-4">
             Hi, I’m Shreyansh Koladiya, a passionate Web Developer with
-            expertise in React framework and 3D modeling. With over 2 years of
-            experience in the IT industry, I specialize in crafting user-centric
-            and visually appealing websites, delivering engaging and seamless
-            digital experiences.
+            expertise in React framework. With over 2 years of experience in the
+            IT industry, I specialize in crafting user-centric and visually
+            appealing websites, delivering engaging and seamless digital
+            experiences.
           </p>
           <h2 className="text-2xl text-orange-500 font-bold mb-4">
             My Journey
@@ -48,11 +48,10 @@ function AboutMe() {
           <p className="mb-4">
             I am currently pursuing a Postgraduate Diploma in Information
             Technology Solutions at Humber College. Throughout my career, I have
-            worked on various major projects in Java technology and web
-            development, contributing to innovative and high-impact solutions.
-            Additionally, I’ve been actively involved in volunteering work and
-            previously served as a Community Connector at Humber College,
-            fostering engagement and collaboration.
+            worked on various major projects contributing to innovative and
+            high-impact solutions. Additionally, I’ve been actively involved in
+            volunteering work and Currently served as a Community Connector at
+            Humber College, fostering engagement and collaboration.
           </p>
           <p className="mb-4">
             I am a lifelong learner, always seeking to expand my knowledge and
