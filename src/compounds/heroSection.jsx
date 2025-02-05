@@ -5,6 +5,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
 import modelPath from "../assets/3D-Model/678197dbd86b55e2cf637263.glb";
+import CountUp from "../hooks/count-up";
 
 function Model({ scrollYRef }) {
   const gltf = useLoader(GLTFLoader, modelPath);
@@ -98,21 +99,48 @@ function HeroSection() {
                 className="text-center"
                 variants={counterItemVariants}
               >
-                <p className="font-bold text-yellow-500">5+</p>
+                <p className="font-bold text-xl text-yellow-500">
+                  <CountUp
+                    from={0}
+                    to={5}
+                    separator=","
+                    direction="up"
+                    duration={5}
+                    className="count-up-text"
+                  />
+                </p>
                 <p>Projects</p>
               </motion.div>
               <motion.div
                 className="text-center"
                 variants={counterItemVariants}
               >
-                <p className="font-bold text-orange-500">2+</p>
+                <p className="font-bold  text-orange-500">
+                  <CountUp
+                    from={0}
+                    to={2}
+                    separator=","
+                    direction="up"
+                    duration={5}
+                    className="count-up-text"
+                  />
+                </p>
                 <p>Experiences</p>
               </motion.div>
               <motion.div
                 className="text-center"
                 variants={counterItemVariants}
               >
-                <p className="font-bold text-orange-400">3+</p>
+                <p className="font-bold text-orange-400">
+                  <CountUp
+                    from={0}
+                    to={3}
+                    separator=","
+                    direction="up"
+                    duration={5}
+                    className="count-up-text"
+                  />
+                </p>
                 <p>Certifications</p>
               </motion.div>
             </motion.div>
