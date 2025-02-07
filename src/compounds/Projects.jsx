@@ -2,15 +2,15 @@ import React from "react";
 
 function Project({ image, title, description, website, sourceCode, tags }) {
   const tagColors = [
-    "bg-blue-100 text-blue-600",
-    "bg-green-100 text-green-600",
-    "bg-red-100 text-red-600",
-    "bg-purple-100 text-purple-600",
-    "bg-yellow-100 text-yellow-600",
+    "bg-blue-100 text-blue-600 hover:bg-blue-300",
+    "bg-green-100 text-green-600 hover:bg-green-300",
+    "bg-red-100 text-red-600 hover:bg-red-300",
+    "bg-purple-100 text-purple-600 hover:bg-purple-300",
+    "bg-yellow-100 text-yellow-600 hover:bg-yellow-300",
   ];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className=" bg-white p-6 rounded-lg shadow-md">
       <img
         src={image}
         alt={`${title} project screenshot`}
@@ -38,7 +38,7 @@ function Project({ image, title, description, website, sourceCode, tags }) {
           href={website}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
+          className="bg-orange-500 text-black font-medium py-2 px-4 rounded hover:bg-yellow-400 transition"
         >
           View Website
         </a>
@@ -46,7 +46,7 @@ function Project({ image, title, description, website, sourceCode, tags }) {
           href={sourceCode}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
+          className="bg-orange-500 text-black font-medium py-2 px-4 rounded hover:bg-yellow-400 transition"
         >
           View Source Code
         </a>
