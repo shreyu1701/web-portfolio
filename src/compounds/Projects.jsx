@@ -12,7 +12,7 @@ function Project({ image, title, description, website, sourceCode, tags }) {
   return (
     <div className=" bg-white p-6 rounded-lg shadow-md">
       <img
-        src={image}
+        src={image} loading="lazy"
         alt={`${title} project screenshot`}
         className="w-full h-48 object-cover rounded-md mb-4"
       />

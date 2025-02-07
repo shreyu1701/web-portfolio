@@ -23,7 +23,12 @@ function Header() {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <a href="/">
-          <img src={logo} alt="SK Logo" className="w-12 h-auto" />
+          <img
+            src={logo}
+            loading="lazy"
+            alt="SK Logo"
+            className="w-12 h-auto"
+          />
         </a>
 
         {/* Desktop Navigation */}
