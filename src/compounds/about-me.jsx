@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion"; // Importing motion
-import image from "../assets/image/Shreyansh.jpg";
+import image from "../assets/image/Shreyansh.webp";
 
 function AboutMe() {
   return (
@@ -19,7 +19,7 @@ function AboutMe() {
         <img
           src={image}
           alt="Shreyansh Koladiya"
-          className="w-full h-full rounded-lg"
+          className="w-auto h-full rounded-lg"
         />
       </motion.div>
 

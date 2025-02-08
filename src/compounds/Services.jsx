@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import webdevelopment from "../assets/image/Web-Development.jpg";
-import uiuxdesign from "../assets/image/UI-UX-Design.jpg";
-import digitalmarketing from "../assets/image/Digital-Marketing.jpg";
+import webdevelopment from "../assets/image/Web-Development.webp";
+import uiuxdesign from "../assets/image/UI-UX-Design.webp";
+import digitalmarketing from "../assets/image/Digital-Marketing.webp";
 
 function Services() {
   // Animation variants for framer-motion

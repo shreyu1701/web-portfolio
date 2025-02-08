@@ -99,7 +99,7 @@ function HeroSection() {
                 className="text-center"
                 variants={counterItemVariants}
               >
-                <p className="font-bold text-xl text-yellow-500">
+                <p className="font-bold text-3xl text-yellow-500">
                   <CountUp
                     from={0}
                     to={5}
@@ -115,7 +115,7 @@ function HeroSection() {
                 className="text-center"
                 variants={counterItemVariants}
               >
-                <p className="font-bold  text-orange-500">
+                <p className="font-bold text-3xl text-orange-500">
                   <CountUp
                     from={0}
                     to={2}
@@ -131,7 +131,7 @@ function HeroSection() {
                 className="text-center"
                 variants={counterItemVariants}
               >
-                <p className="font-bold text-orange-400">
+                <p className="font-bold text-3xl text-orange-400">
                   <CountUp
                     from={0}
                     to={3}

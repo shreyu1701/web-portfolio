@@ -25,6 +25,8 @@ function Header() {
         <a href="/">
           <img
             src={logo}
+            width="50"
+            height="50"
             loading="lazy"
             alt="SK Logo"
             className="w-12 h-auto"

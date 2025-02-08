@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Project from "../compounds/Projects";
-import healthyFeast from "../assets/image/Healthy-Feast.png";
-import codeedoc from "../assets/image/Codeedoc.png";
-import homehealthdevicedatalogger from "../assets/image/Login.png";
-import waytogreen from "../assets/image/WayToGreen.png";
+import healthyFeast from "../assets/image/Healthy-Feast.webp";
+import codeedoc from "../assets/image/Codeedoc.webp";
+import homehealthdevicedatalogger from "../assets/image/Login.webp";
+import waytogreen from "../assets/image/WayToGreen.webp";
 
 function Portfolio() {
   return (
